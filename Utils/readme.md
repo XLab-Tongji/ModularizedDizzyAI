@@ -1,6 +1,6 @@
 ### 代码结构说明
 
-1. 本项目代码为原项目https://github.com/XLab-Tongji/DizzyAI代码的重构，以后的更新将在本项目进行，原项目不再维护。
+1. 本项目代码为原项目 https://github.com/XLab-Tongji/DizzyAI 代码的重构，以后的更新将在本项目进行，原项目不再维护。
 
 2. 各个字段提取函数已经分别封装在了不同的python文件中，命名格式为xxExtractor.py。 可以根据需要，以文件为粒度，增加不同的提取函数。
 
