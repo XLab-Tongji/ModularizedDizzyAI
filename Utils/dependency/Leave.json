@@ -13,11 +13,12 @@
         "field": "startDate",
         "name": "起自日期",
         "type": "date",
-        "format": ""
+        "format": "%y/%m/%d %H:%M"
     },
     {
         "field": "endDate",
         "name": "截止日期",
-        "type": "date"
+        "type": "date",
+        "format": "%y/%m/%d %H:%M"
     }
 ]

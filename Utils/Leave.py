@@ -75,7 +75,7 @@ def format(message):
                 ret = ret + "【" + field["name"] + "】 "
                 if field["type"] == "date":
                     date = datetime.datetime.strptime(message[field_name], "%Y-%m-%d %H:%M:%S")
-                    ret = ret + date.strftime("%y/%m/%d %H:%M") + " "
+                    ret = ret + date.strftime(field["format"]) + " "
                 else:
                     ret = ret + message[field_name] + " "
 
