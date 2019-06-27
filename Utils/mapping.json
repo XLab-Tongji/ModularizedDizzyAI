@@ -1,6 +1,6 @@
 {
     "leave": {
         "file": "Leave",
-        "component": ["TimeExtractor", "TypeExtractor", "ReasonExtractor", "ExaminePersonExtractor", "EmailExtractor"]
+        "component": ["TimeExtractor", "TypeExtractor", "ExaminePersonExtractor", "EmailExtractor"]
     }
 }

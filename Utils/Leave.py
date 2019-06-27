@@ -1,5 +1,9 @@
 import re
 import importlib
+import json
+import os
+import datetime
+import time
 
 def entry(sentence):
     return re.search(r'(.*)请(.*)假(.*).*', sentence, re.M | re.I)
@@ -61,5 +65,18 @@ def continue_ask(message, components):
                 message = module.elicit(message)
     return None
 
-def pprint(message):
-    print(message)
+def format(message):
+    ret = ""
+    with open(os.path.dirname(__file__) + '/dependency/Leave.json', 'r', encoding='utf-8') as f:
+        formats = json.load(f)
+        for field in formats:
+            field_name = field["field"]
+            if field_name in message:
+                ret = ret + "【" + field["name"] + "】 "
+                if field["type"] == "date":
+                    date = datetime.datetime.strptime(message[field_name], "%Y-%m-%d %H:%M:%S")
+                    ret = ret + date.strftime("%y/%m/%d %H:%M") + " "
+                else:
+                    ret = ret + message[field_name] + " "
+
+    return ret

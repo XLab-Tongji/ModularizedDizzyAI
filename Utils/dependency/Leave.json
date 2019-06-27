@@ -1,0 +1,23 @@
+[
+    {
+        "field": "TypeExtractor",
+        "name": "事项",
+        "type": "string"
+    },
+    {
+        "field": "ReasonExtractor",
+        "name": "事由",
+        "type": "string"
+    },
+    {
+        "field": "startDate",
+        "name": "起自日期",
+        "type": "date",
+        "format": ""
+    },
+    {
+        "field": "endDate",
+        "name": "截止日期",
+        "type": "date"
+    }
+]
