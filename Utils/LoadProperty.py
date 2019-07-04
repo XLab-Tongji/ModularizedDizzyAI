@@ -1,6 +1,7 @@
 import json
 import os
 import importlib
+from InsertIntoDB import insertIntoDB
 
 def load_property(name):
     with open(os.path.dirname(__file__) + '/mapping.json', 'r', encoding='utf-8') as f:
@@ -10,7 +11,7 @@ def load_property(name):
 # 测试主函数
 if __name__ == '__main__':
     from stanfordcorenlp import StanfordCoreNLP
-    with StanfordCoreNLP(r'E:/stanford-corenlp-full-2018-10-05', lang='zh', memory='4g', quiet=True) as nlp:
+    with StanfordCoreNLP(r'E:/tools/stanford-corenlp-full-2018-10-05', lang='zh', memory='4g', quiet=True) as nlp:
         nlp.parse("test")
 
         from Staff import Staff
@@ -21,7 +22,14 @@ if __name__ == '__main__':
             print("你要做什么呢")
             sentence = input()
             if module.entry(sentence):
-                message = module.ask(sentence, config["component"])
+                message = module.ask(sentence, config["component"], nlp)
                 print(staff.toString() + module.format(message))
                 print("-----------------")
+                print(message)
+                # InsertJson = format(message)
+                try:
+                    insertIntoDB(message)
+                except Exception as e:
+                    print(e)
+
 

@@ -8,7 +8,7 @@ def parse(sentence, nlp=None):
     # 可独立启动，预加载可以提高除此运行速度
     pre_loaded = False if nlp is None else True
     if not pre_loaded:
-        nlp = StanfordCoreNLP(r'E:/stanford-corenlp-full-2018-10-05', lang='zh', memory='4g', quiet=True)
+        nlp = StanfordCoreNLP(r'E:/tools/stanford-corenlp-full-2018-10-05', lang='zh', memory='4g', quiet=True)
     processed = preprocess(sentence)
     if len(processed) != 0:
         splits = re.compile("[,，。,]").split(processed)

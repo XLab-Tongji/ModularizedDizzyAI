@@ -4,7 +4,7 @@ import os
 def parse(sentence):
     ex = Extractor()
     name = ex.extract_name(sentence)
-    return name
+    return name if name is None else "".join(name)
 
 def elicit_flag(message):
     return message[os.path.basename(__file__).replace(".py", "")] is None, True
