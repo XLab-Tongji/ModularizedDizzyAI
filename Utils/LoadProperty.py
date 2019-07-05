@@ -26,10 +26,7 @@ if __name__ == '__main__':
                 print(staff.toString() + module.format(message))
                 print("-----------------")
                 print(message)
-                # InsertJson = format(message)
-                try:
-                    insertIntoDB(message)
-                except Exception as e:
-                    print(e)
+                # 将数据插入influxdb，参见InsertIntoDB.py
+                # insertIntoDB(message)
 
 

@@ -1,7 +1,7 @@
 import datetime
 from influxdb import InfluxDBClient
 def insertIntoDB(message):
-    client = InfluxDBClient(host='10.60.38.173', port=8086, username='root', password='tongji409', database='dizzyAI')
+    client = InfluxDBClient(host='127.0.0.1', port=8086, username='root', password='root', database='dizzyAI')
     print(client.get_list_database())   #显示所有数据库名称
     result = client.query("show measurements")    #显示数据库中的表
     print(result)
