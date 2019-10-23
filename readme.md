@@ -1,13 +1,21 @@
 #### 安装
 1. 基础依赖安装使用pip install即可，例如nltk, jieba等，根据运行提示安装缺少的依赖。
 
-2. 对于standford coreNLP的安装，首先下载 http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip 并解压缩，然后下载 http://nlp.stanford.edu/software/stanford-chinese-corenlp-2018-10-05-models.jar 中文扩展，并将此jar包放入解压缩的文件夹内。最后在main.py中206行的文件夹地址改为解压缩的地址即可。
+2. 对于standford coreNLP的安装：
+
+   2.1 下载 http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip 并解压缩，然后下载 http://nlp.stanford.edu/software/stanford-chinese-corenlp-2018-10-05-models.jar 中文扩展，并将此jar包放入解压缩的文件夹内。最后在main.py中206行的文件夹地址改为解压缩的地址即可。
+
+   2.2 在 jar包所在的路径下，运行以下指令，启动standford coreNLP服务：
+
+   ```shell
+   java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
+   ```
 
 3. 根据项目的readme文件，安装https://github.com/Ryaninf/Time-NLPY/blob/master/README.md。
 
 #### 启动方式：
 
-Pycharm打开项目后，运行LoadProperty.py文件。
+Pycharm打开项目后，运行main.py文件。
 
 #### 特殊提示：
 1.审批人配置在resource/myDict.dict中，姓名可以模糊匹配。
