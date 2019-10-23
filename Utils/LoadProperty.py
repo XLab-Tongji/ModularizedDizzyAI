@@ -2,6 +2,7 @@ import json
 import os
 import importlib
 import urllib.request
+from stanfordcorenlp import StanfordCoreNLP
 
 
 def load_property(name):
@@ -19,7 +20,7 @@ if __name__ == '__main__':
         print("你要做什么呢")
         sentence = input()
         if module.entry(sentence):
-            standord_nlp = urllib.request.urlopen('http://127.0.0.1:8081/server')
+            standord_nlp = StanfordCoreNLP('http://localhost', port=9000)
             message = module.ask(sentence, config["component"], standord_nlp)
             print(staff.toString() + module.format(message))
             print("-----------------")
